@@ -23,6 +23,13 @@ pipeline {
         }
 
         stage('Job3 - Deploying to Prod') {
+            {
+        when {
+        expression {
+            env.GIT_BRANCH == 'origin/main'
+        }
+    }
+
             steps {
                 echo 'Deploying to production'
                 sh '''
