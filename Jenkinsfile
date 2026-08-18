@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage('Job1 - Build') {
+        stage('Job1 - Build the image') {
             steps {
                 echo 'Building Docker image'
 
