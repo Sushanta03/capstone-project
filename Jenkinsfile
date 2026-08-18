@@ -31,7 +31,7 @@ pipeline {
 
         stage('Job3 - Prod') {
             when {
-                branch 'master'
+                branch 'main'
             }
 
             steps {
@@ -45,5 +45,8 @@ pipeline {
                 '''
             }
         }
+            steps {
+               echo ' skip production'
+            }
     }
 }
