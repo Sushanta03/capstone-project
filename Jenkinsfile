@@ -36,9 +36,7 @@ pipeline {
                 echo 'Deploying to production'
 
                 sh '''
-                    docker rm -f mywebapp || true
-
-                    docker run -d  --name webapp -p 8081:80 mywebapp
+                 docker run -itd  --name webapp -p 8081:80 mywebapp
                      
                 '''
             }
