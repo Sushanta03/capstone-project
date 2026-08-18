@@ -14,15 +14,10 @@ pipeline {
         stage('Job2 - Test') {
             steps {
                 echo 'Testing application'
-
-                sh '''
-                    docker rm -f mywebapp || true
-
-                    docker run -d --name mywebapp -p 8080:80 mywebapp
-
-                    sleep 5
-
-                    curl -f http://localhost:8080
+               sh 
+                "docker run -d --name mywebapp -p 8080:80 mywebapp"
+                sleep 5
+                curl -f http://localhost:8080
 
             }
         }
@@ -34,10 +29,7 @@ pipeline {
 
             steps {
                 echo 'Deploying to production'
-
-                sh '''
-                 docker run -itd  --name webapp -p 8081:80 mywebapp
-                     
+                sh '''docker run -d --name mywebapp -p 8080:80 mywebapp   
                 '''
             }
         }
