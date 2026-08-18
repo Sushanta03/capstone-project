@@ -23,10 +23,6 @@ pipeline {
         }
 
         stage('Job3 - Deploying to Prod') {
-            when {
-                branch 'main'
-            }
-
             steps {
                 echo 'Deploying to production'
                 sh '''
