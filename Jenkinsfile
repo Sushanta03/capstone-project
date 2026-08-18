@@ -15,10 +15,11 @@ pipeline {
             steps {
                 echo 'Testing application'
                sh 
-                "docker run -d --name mywebapp -p 8080:80 mywebapp"
+                '''docker run -d --name mywebapp -p 8081:80 mywebapp
                 sleep 5
-                curl -f http://localhost:8080
-
+                curl -f http://localhost:8081
+                docker rm -f mywebapp || true
+                '''
             }
         }
 
