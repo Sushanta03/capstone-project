@@ -15,10 +15,9 @@ pipeline {
             steps {
                 echo 'Testing application'
                 sh '''
-                docker run -d --name mywebapp1 -p 8081:80 mywebapp
+                docker run -d --name testapp -p 8081:80 mywebapp
                 sleep 5
                 curl -f http://localhost:8081
-                docker rm -f mywebapp1 || true
                 '''
             }
         }
@@ -31,8 +30,8 @@ pipeline {
             steps {
                 echo 'Deploying to production'
                 sh '''
-                docker rm -f mywebapp1 || true
-                docker run -d --name mywebapp -p 8081:80 mywebapp   
+                docker rm -f mywebapp || true
+                docker run -d --name mywebapp -p 8082:80 mywebapp   
                 '''
             }
         }
