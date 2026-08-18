@@ -29,7 +29,7 @@ pipeline {
             }
         }
 
-        stage('Job3 - Prod') {
+        stage('Job3 - Deploying to Prod') {
             when {
                 branch 'main'
             }
