@@ -45,8 +45,6 @@ pipeline {
                 '''
             }
         }
-            steps {
-               echo ' skip production'
-            }
+          
     }
 }
