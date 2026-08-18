@@ -22,7 +22,7 @@ pipeline {
 
                     sleep 5
 
-                    curl -f http://localhost:8080
+                    curl -f http://localhost:8081
 
                     docker rm -f mywebapp
                 '''
@@ -42,7 +42,7 @@ pipeline {
 
                     docker run -d \
                       --name webapp \
-                      -p 80:80 \
+                      -p 8081:80 \
                       mywebapp
                 '''
             }
