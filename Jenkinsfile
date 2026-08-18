@@ -40,10 +40,8 @@ pipeline {
                 sh '''
                     docker rm -f webapp || true
 
-                    docker run -d \
-                      --name webapp \
-                      -p 8081:80 \
-                      mywebapp
+                    docker run -d  --name webapp -p 8081:80 mywebapp
+                     
                 '''
             }
         }
