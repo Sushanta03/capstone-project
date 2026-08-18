@@ -14,8 +14,8 @@ pipeline {
         stage('Job2 - Test') {
             steps {
                 echo 'Testing application'
-                sh 
-                '''docker run -d --name mywebapp -p 8081:80 mywebapp
+                sh '''
+                docker run -d --name mywebapp -p 8081:80 mywebapp
                 sleep 5
                 curl -f http://localhost:8081
                 docker rm -f mywebapp || true
